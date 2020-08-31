@@ -6,6 +6,10 @@ WORKDIR "/app"
 
 # copy 'package.json' file to current roking directory ('/app')
 COPY package.json .
+
+# enter interact mode
+# RUN CI=true
+
 # run command
 RUN npm install
 

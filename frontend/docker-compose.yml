@@ -1,0 +1,26 @@
+# specified verion
+version: '3'
+# define services when run docker-compose up
+services:
+  web:
+    build:
+      # context say where we want all the files and folder for this image to be pulled from. (. = current directory)
+      context: .
+      dockerfile: Dockerfile.dev
+
+    ports:
+      - "3000:3000"
+    volumes:
+      # this line say "Do not try to map a folder up against inside container!"
+      - /app/node_modules
+      # this line say "Do map a folder up against [current outside the container folder] to [app folder inside container]!"
+      - .:/app
+    tty: true  # ใส่ไว้เพราะเกิด error react exited with code 0 ; https://dev.to/igmrrf/docker-react-exited-with-code-0-398n (option 1)
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
