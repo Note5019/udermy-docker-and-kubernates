@@ -1,0 +1,16 @@
+# base image
+FROM node:alpine
+
+# setup working directory (change current directory in Container)
+WORKDIR "/app"
+
+# copy 'package.json' file to current roking directory ('/app')
+COPY package.json .
+# run command
+RUN npm install
+
+# copy all file to current roking directory ('/app')
+COPY . .
+
+# rum command to start project
+CMD ["npm", "run", "start"]
