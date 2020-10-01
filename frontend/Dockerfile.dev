@@ -8,7 +8,7 @@ WORKDIR "/app"
 COPY package.json .
 
 # enter interact mode
-# RUN CI=true
+RUN CI=true
 
 # run command
 RUN npm install
