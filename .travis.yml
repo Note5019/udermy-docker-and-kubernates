@@ -3,12 +3,15 @@ services:
   - docker
 
 befor_install:
+  - pwd
   - cd ./complex
   - docker build -t note5019/react-test -f ./client/Dockerfile.dev ./client
 script:
+  - pwd
   - cd ./complex/client
   - docker run note5019/react-test npm test -- --coverage
 after_success:
+  - pwd
   - cd ./complex
   - docker build -t note5019/multi-client ./client
   - docker build -t note5019/multi-nginx ./nginx
