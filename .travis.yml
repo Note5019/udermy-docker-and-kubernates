@@ -8,11 +8,11 @@ befor_install:
   - docker build -t note5019/react-test -f ./client/Dockerfile.dev ./client
 script:
   - pwd
-  - cd ./complex/client
+  - cd ./client
   - docker run note5019/react-test npm test -- --coverage
 after_success:
   - pwd
-  - cd ./complex
+  - cd ..
   - docker build -t note5019/multi-client ./client
   - docker build -t note5019/multi-nginx ./nginx
   - docker build -t note5019/multi-server ./server
