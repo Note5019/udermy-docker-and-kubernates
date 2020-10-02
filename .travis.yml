@@ -21,7 +21,3 @@ after_success:
   - docker push note5019/multi-nginx
   - docker push note5019/multi-server
   - docker push note5019/multi-worker
-
-language: generic
-script:
-  - docker run -e CI=true USERNAME/react-test npm test
