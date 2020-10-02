@@ -1,0 +1,27 @@
+sudo: required
+services:
+  - docker
+
+befor_install:
+  - cd ./complex
+  - docker build -t note5019/react-test -f ./client/Dockerfile.dev ./client
+script:
+  - cd ./complex/client
+  - docker run note5019/react-test npm test -- --coverage
+after_success:
+  - cd ./complex
+  - docker build -t note5019/multi-client ./client
+  - docker build -t note5019/multi-nginx ./nginx
+  - docker build -t note5019/multi-server ./server
+  - docker build -t note5019/multi-worker ./worker
+  # Log in to Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login - u "$DOCKER_ID" --password-stdin
+  # Push Docker image
+  - docker push note5019/multi-client
+  - docker push note5019/multi-nginx
+  - docker push note5019/multi-server
+  - docker push note5019/multi-worker
+
+language: generic
+script:
+  - docker run -e CI=true USERNAME/react-test npm test
