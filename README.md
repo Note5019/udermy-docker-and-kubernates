@@ -13,3 +13,8 @@ create react project
 - `docker run -e CI=true note5019/docker-react npm run test` อันนี้ใช้ได้ รันแล้วหยุด exit ออกมา
 
 test
+
+
+# IAM user - note
+- Secret access key: `rjqVO7IZ2nl36jjnLtKIPPsv8r8Dzf7cdXbvy4nO`
+- Access key ID: `AKIAX2JOQ3X2FFSSBD5T`
