@@ -13,12 +13,13 @@ script:
 after_success:
   - pwd
   - cd ..
+  - pwd
   - docker build -t note5019/multi-client ./client
   - docker build -t note5019/multi-nginx ./nginx
   - docker build -t note5019/multi-server ./server
   - docker build -t note5019/multi-worker ./worker
   # Log in to Docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login - u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push Docker image
   - docker push note5019/multi-client
   - docker push note5019/multi-nginx
