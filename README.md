@@ -12,6 +12,7 @@ create react project
 - `docker run note5019/docker-react npm run test -- --coverage` ใช้การไม่ด้ายยยยย รันแล้วไม่ยอมหยุด
 - `docker run -e CI=true note5019/docker-react npm run test` อันนี้ใช้ได้ รันแล้วหยุด exit ออกมา
 - `kubectl set image deployment/client-deployment client=stephengrider/multi-client:v5 `
-test
 
 
+- `eval $(minikube docker-env)` set current terminal to connect to docker-server in virtual-machine
+  - `docker ps` to see the result (list of container in VM)
