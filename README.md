@@ -16,3 +16,8 @@ create react project
 
 - `eval $(minikube docker-env)` set current terminal to connect to docker-server in virtual-machine
   - `docker ps` to see the result (list of container in VM)
+
+- `kubectl delete deployment client-deployment`
+- `kubectl delete service client-node-port`
+- `kubectl apply -f k8s/client-deployment.yml` 
+- `kubectl apply -f k8s` = apply all config in k8s folder

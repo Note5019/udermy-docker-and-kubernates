@@ -12,7 +12,7 @@ spec:
       labels:
         component: web
     spec:
-      comtainers:
+      containers:
         - name: client
           image: stephengrider/multi-client
           ports:
