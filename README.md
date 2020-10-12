@@ -19,5 +19,9 @@ create react project
 
 - `kubectl delete deployment client-deployment`
 - `kubectl delete service client-node-port`
-- `kubectl apply -f k8s/client-deployment.yml` 
+- `kubectl apply -f k8s/client-deployment.yml`
 - `kubectl apply -f k8s` = apply all config in k8s folder
+
+
+- `kubectl get storageclass`
+- `kubectl describe storageclass`
