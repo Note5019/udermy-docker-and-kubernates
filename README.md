@@ -25,3 +25,7 @@ create react project
 
 - `kubectl get storageclass`
 - `kubectl describe storageclass`
+- `kubectl get pv`
+- `kubectl get pvc`
+- `kubectl create secret generic pgpassword --from-literal PGPASSWORD=note`
+- `kubectl get secret`
