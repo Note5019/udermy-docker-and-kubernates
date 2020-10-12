@@ -29,3 +29,4 @@ create react project
 - `kubectl get pvc`
 - `kubectl create secret generic pgpassword --from-literal PGPASSWORD=note`
 - `kubectl get secret`
+- `kubectl delete -f k8s`
