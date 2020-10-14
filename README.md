@@ -30,3 +30,8 @@ create react project
 - `kubectl create secret generic pgpassword --from-literal PGPASSWORD=note`
 - `kubectl get secret`
 - `kubectl delete -f k8s`
+
+- `curl -O https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.3/aio/deploy/recommended.yaml`
+- `kubectl apply -f kubernetes-dashboard.yaml`
+- `kubectl proxy`
+- `http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/`
