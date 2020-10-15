@@ -38,3 +38,5 @@ create react project
 
 - `docker run -it -v $(pwd):/app ruby:2.4 sh`
 - `gem install travis`
+
+- `git rev-parse HEAD`
