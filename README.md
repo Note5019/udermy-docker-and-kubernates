@@ -35,3 +35,6 @@ create react project
 - `kubectl apply -f kubernetes-dashboard.yaml`
 - `kubectl proxy`
 - `http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/`
+
+- `docker run -it -v $(pwd):/app ruby:2.4 sh`
+- `gem install travis`
